@@ -1,5 +1,4 @@
 <?php
-
    $host        = "host = 127.0.0.1";
    $port        = "port = 5432";
    $dbname      = "dbname = greenroom";
@@ -12,17 +11,8 @@
        echo "Opened database successfully\n";
    }
 
-    $query = "DROP TABLE IF EXISTS cars";
-
-    $drop = pg_query($db, $query);
-    if(!$drop) {
-        echo pg_last_error($db);
-    } else {
-        echo "Table dropped successfully\n";
-    }
-
-    $sql =<<<EOF
-          CREATE TABLE TRACTOR
+   $sql =<<<EOF
+      CREATE TABLE TRACTOR
           (BRAND           TEXT    NOT NULL,
           TYPE            TEXT     NOT NULL,
           PRICE        INT     NOT NULL,
@@ -30,16 +20,15 @@
           DESCRIPTION           TEXT    NOT NULL);
 EOF;
 
-    $sql =<<<EOF
+   /*$sql =<<<EOF
           INSERT INTO TRACTOR (BRAND,TYPE,PRICE,PERFORMANCE,DESCRIPTION)
           VALUES ('PORSCHEs', 'XYV234', 3200000, 340, 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.' );
-EOF;
+EOF;*/
 
-
-    $ret = pg_query($db, $sql);
-    if(!$ret) {
-        echo pg_last_error($db);
-    } else {
-        echo "Table created successfully\n";
-    }
-    pg_close($db);
+   $ret = pg_query($db, $sql);
+   if(!$ret) {
+       echo pg_last_error($db);
+   } else {
+       echo "Table created successfully\n";
+   }
+   pg_close($db);
