@@ -3,32 +3,29 @@
     $host        = "host = 127.0.0.1";
     $port        = "port = 5432";
     $dbname      = "dbname = greenroom";
-    $credentials = "user = postgres password=12345";
+    $credentials = "user = postgres password=Sz28Lor6666";
+
+    header('Content-Type: application/json');
+
 
     $db = pg_connect( "$host $port $dbname $credentials"  );
-    if(!$db) {
-        echo "Error : Unable to open database\n";
-    } else {
-        echo "Opened database successfully\n";
-    }
 
     // Performing SQL query
     $query = 'SELECT * FROM TRACTOR';
     $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
-    // Printing results in HTML
-    echo "<table>\n";
-    while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-        echo "\t<tr>\n";
-        foreach ($line as $col_value) {
-            echo "\t\t<td>$col_value</td>\n";
-        }
-        echo "\t</tr>\n";
-    }
-    echo "</table>\n";
+    $tractorArray = array();
 
-    // Free resultset
-    pg_free_result($result);
+    // Printing results in HTML
+    while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        $lineArray = array();
+        array_push($tractorArray, $line);
+    }
+    echo json_encode($tractorArray);
 
 
     pg_close($db);
+
+
+
+

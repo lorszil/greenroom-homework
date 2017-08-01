@@ -45,8 +45,7 @@
     </database>
     <schema id="15" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-08-01.10:45:45.260</IntrospectionTimestamp>
-      <IntrospectionStateNumber>14496</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-08-01.21:55:55.004</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -65,39 +64,5 @@
     <schema id="20" parent="2" name="information_schema">
       <ObjectId>12381</ObjectId>
     </schema>
-    <table id="21" parent="15" name="tractor">
-      <ObjectId>87749</ObjectId>
-      <StateNumber>14496</StateNumber>
-    </table>
-    <column id="22" parent="21" name="brand">
-      <Position>1</Position>
-      <DataType>text|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>14496</StateNumber>
-    </column>
-    <column id="23" parent="21" name="type">
-      <Position>2</Position>
-      <DataType>text|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>14496</StateNumber>
-    </column>
-    <column id="24" parent="21" name="price">
-      <Position>3</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>14496</StateNumber>
-    </column>
-    <column id="25" parent="21" name="performance">
-      <Position>4</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>14496</StateNumber>
-    </column>
-    <column id="26" parent="21" name="description">
-      <Position>5</Position>
-      <DataType>text|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>14496</StateNumber>
-    </column>
   </database-model>
 </dataSource>
